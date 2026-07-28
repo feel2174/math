@@ -6,6 +6,7 @@ import ExternalCta from "@/components/ExternalCta";
 import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
+import TopicLink from "@/components/TopicLink";
 
 export const metadata: Metadata = {
   title: "초5 분수 계산, 통분에서 갈린다",
@@ -42,24 +43,23 @@ export default function Grade5() {
           description="11math.com에서 약분과 통분을 단계별로 나눈 문제지를 받을 수 있다."
         />
 
-        <h2>통분 실수 유형 3가지</h2>
+        <h2>초5에서 먼저 잡아야 할 것</h2>
         <p>
-          첫째, 분모만 통분하고 분자는 같은 배수로 곱하지 않는 실수다. 분모를
-          2배로 늘렸으면 분자도 2배로 늘려야 하는데 절차로만 외우면 자주
-          빠뜨린다. 둘째, 공배수를 잘못 구해 통분 자체가 틀리는 경우다.
-          최소공배수 대신 아무 공배수나 써도 계산은 되지만 이후 약분
-          단계에서 숫자가 커져 실수가 는다. 셋째, 계산 후 약분하지 않고
-          답을 그대로 두는 경우다. 답이 맞아도 기약분수로 정리하지 않으면
-          감점되는 경우가 많다.
+          통분에서 반복되는 실수 유형과 약분·통분을 따로 연습하는 순서를
+          자세히 다뤘다.
         </p>
-
-        <h2>약분과 통분, 따로 연습한다</h2>
-        <p>
-          약분과 통분을 한 번에 섞어 연습하면 두 절차가 헷갈린다. 약분만
-          집중해 기약분수로 정리하는 감각을 잡고, 통분을 따로 연습해 분모
-          맞추는 절차를 익힌다. 두 절차가 각각 손에 익은 뒤 덧셈·뺄셈에서
-          자연스럽게 합쳐 쓰면 실수가 크게 준다.
-        </p>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          <TopicLink
+            href="/grade-5/common-denominator-mistakes"
+            title="통분 실수 유형 3가지와 고치는 법"
+            description="어느 단계에서 틀렸는지 구분하면 연습이 빨라진다"
+          />
+          <TopicLink
+            href="/grade-5/reduce-and-common-denominator"
+            title="약분과 통분, 따로 연습해야 하는 이유"
+            description="두 절차를 각각 잡은 뒤에 합쳐 쓴다"
+          />
+        </div>
 
         <AdSlot id="grade5-infeed-1" />
 

@@ -6,6 +6,7 @@ import ExternalCta from "@/components/ExternalCta";
 import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
+import TopicLink from "@/components/TopicLink";
 
 export const metadata: Metadata = {
   title: "초3 나눗셈과 분수, 수포자 첫 분기점",
@@ -42,24 +43,23 @@ export default function Grade3() {
           description="11math.com에서 등분제·포함제, 분수 개념별 문제지를 받을 수 있다."
         />
 
-        <h2>나눗셈, 두 가지 의미부터 구분한다</h2>
+        <h2>초3에서 먼저 잡아야 할 것</h2>
         <p>
-          나눗셈에는 &quot;똑같이 나누기&quot;(등분제)와 &quot;몇 묶음인지
-          세기&quot;(포함제) 두 의미가 있다. 12÷3을 &quot;3명에게 똑같이
-          나누면 몇 개씩&quot;으로만 배우면, &quot;12개를 3개씩 묶으면 몇
-          묶음&quot;이라는 상황에서 혼란스러워한다. 문제지 전에 구체물이나
-          그림으로 두 상황을 모두 경험시켜야 나눗셈이 어떤 상황에 쓰이는지
-          감이 잡힌다.
+          나눗셈의 두 가지 의미와 분수를 처음 배울 때 다뤄야 할 경험을
+          자세히 다뤘다.
         </p>
-
-        <h2>분수, 처음이 가장 중요하다</h2>
-        <p>
-          &quot;전체를 똑같이 나눈 것 중 하나&quot;라는 등분할 개념을
-          피자나 종이접기 같은 경험으로 충분히 다뤄야 한다. 이 경험 없이
-          1/2, 1/3 표기와 크기 비교를 문제지로만 익히면, 분수가 왜 자연수처럼
-          셈이 안 되는지 이해하지 못한 채 초5 통분에서 무너진다. 초3 분수는
-          어렵게 가르치기보다 손으로 충분히 다뤄보게 하는 게 핵심이다.
-        </p>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          <TopicLink
+            href="/grade-3/division-meaning"
+            title="나눗셈, 등분제와 포함제 구분하는 법"
+            description="같은 12÷3도 묻는 상황이 다르다"
+          />
+          <TopicLink
+            href="/grade-3/fraction-intro"
+            title="분수, 처음 배울 때 꼭 잡아야 할 개념"
+            description="표기보다 '똑같이 나눈 것'이라는 경험이 먼저다"
+          />
+        </div>
 
         <AdSlot id="grade3-infeed-1" />
 

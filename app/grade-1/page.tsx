@@ -6,6 +6,7 @@ import ExternalCta from "@/components/ExternalCta";
 import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
+import TopicLink from "@/components/TopicLink";
 
 export const metadata: Metadata = {
   title: "초1 수학 공부법, 손가락은 언제 떼야 할까",
@@ -42,24 +43,23 @@ export default function Grade1() {
           description="11math.com에서 난이도별 초1 연산 문제지를 무료로 받을 수 있다."
         />
 
-        <h2>손가락 셈, 언제 떼야 할까</h2>
+        <h2>초1에서 먼저 잡아야 할 것</h2>
         <p>
-          손가락으로 세는 건 나쁜 습관이 아니다. 수를 구체물로 이해하는
-          자연스러운 단계다. 문제는 언제까지 의존하느냐다. 10 이내
-          덧셈뺄셈을 손가락 없이 답할 수 있는지가 기준점이 된다. 이 단계를
-          넘기지 못한 채 받아올림으로 넘어가면, 손가락 열 개로 감당 안 되는
-          자리에서 급격히 힘들어한다. 10 이내 수 구성을 충분히 반복한 뒤
-          받아올림으로 넘어가는 순서가 안전하다.
+          손가락 셈을 떼는 시점과 받아올림 개념, 두 가지가 초1 연산의
+          핵심이다. 각각 자세히 다뤘다.
         </p>
-
-        <h2>받아올림, 절차만 외우면 나중에 무너진다</h2>
-        <p>
-          &quot;일의 자리끼리 더하고 넘긴다&quot;는 절차로만 암기시키면 당장은
-          풀어도, 두 자리 이상 큰 수에서 왜 넘기는지 몰라 실수가 반복된다.
-          10개씩 묶어 세기, 동전이나 바둑알로 10 만들기 같은 활동을 연산지와
-          병행하면 절차와 개념이 함께 잡힌다. 문제지는 개념 확인용으로 쓰고,
-          개념 자체는 손으로 만지는 활동에서 먼저 잡는 순서를 권한다.
-        </p>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          <TopicLink
+            href="/grade-1/counting-on-fingers"
+            title="손가락 셈, 언제 떼야 할까"
+            description="10 이내 수 구성 기준과 떼는 연습 3단계"
+          />
+          <TopicLink
+            href="/grade-1/carrying"
+            title="받아올림, 절차만 외우면 무너지는 이유"
+            description="10 만들기 연습으로 개념부터 잡는 법"
+          />
+        </div>
 
         <AdSlot id="grade1-infeed-1" />
 

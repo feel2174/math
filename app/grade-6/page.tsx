@@ -6,6 +6,7 @@ import ExternalCta from "@/components/ExternalCta";
 import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
+import TopicLink from "@/components/TopicLink";
 
 export const metadata: Metadata = {
   title: "초6 수학, 중등 대비는 구멍 점검부터",
@@ -43,22 +44,23 @@ export default function Grade6() {
           description="11math.com에서 비와 비율, 중등 대비 문제지를 받을 수 있다."
         />
 
-        <h2>비와 비율, 분수 위에 얹히는 새 언어</h2>
+        <h2>초6에서 먼저 잡아야 할 것</h2>
         <p>
-          비와 비율은 앞서 배운 분수를 다른 방식으로 표현한 것에 가깝다.
-          2:3이라는 비를 분수 2/3로, 다시 비율과 백분율로 자유롭게 오가며
-          표현해야 하는데 이 전환이 안 되는 경우가 많다. 초5까지 분수
-          계산이 약했다면 이 단원에서 공백이 그대로 드러난다.
+          비와 비율이 분수와 어떻게 다른지, 중1 선행 전 무엇을 점검해야
+          하는지 자세히 다뤘다.
         </p>
-
-        <h2>중1 선행 전 구멍 점검 체크리스트</h2>
-        <p>
-          분수 사칙연산을 실수 없이 하는가, 통분과 약분이 자동으로 되는가,
-          비와 비율을 방정식 없이 문장제로 푸는가, 소수와 분수를 자유롭게
-          바꾸는가. 넷 중 하나라도 불안하면 선행보다 초등 과정 복습이
-          먼저다. 구멍을 남긴 채 진도만 나가면 중등 과정에서 같은 자리를
-          계속 다시 배운다.
-        </p>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          <TopicLink
+            href="/grade-6/ratio-new-language"
+            title="비와 비율, 분수와 다른 점부터 이해하기"
+            description="2:3, 2/3, 66.7%는 같은 값을 다르게 쓴 것뿐이다"
+          />
+          <TopicLink
+            href="/grade-6/pre-middle-checklist"
+            title="중1 선행 전 구멍 점검 체크리스트 4가지"
+            description="넷 중 하나라도 불안하면 복습이 먼저다"
+          />
+        </div>
 
         <AdSlot id="grade6-infeed-1" />
 

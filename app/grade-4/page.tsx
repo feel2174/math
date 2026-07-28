@@ -6,6 +6,7 @@ import ExternalCta from "@/components/ExternalCta";
 import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
+import TopicLink from "@/components/TopicLink";
 
 export const metadata: Metadata = {
   title: "초4 수학이 어려워요, 속도보다 정확도",
@@ -42,23 +43,23 @@ export default function Grade4() {
           description="11math.com에서 큰 수 연산부터 혼합계산까지 단계별로 받을 수 있다."
         />
 
-        <h2>속도보다 정확도가 우선인 시기</h2>
+        <h2>초4에서 먼저 잡아야 할 것</h2>
         <p>
-          초1~3까지는 빨리 푸는 게 중요한 지표였다면, 초4부턴 계산 순서를
-          지켰는지, 자릿수가 밀리지 않았는지가 더 중요하다. 곱셈·나눗셈을
-          덧셈·뺄셈보다 먼저 계산해야 한다는 규칙을 알면서도 실제 문제에서
-          순서를 놓치는 경우가 흔하다. 답만 확인하지 말고 풀이 과정에서
-          순서를 지켰는지 함께 점검한다.
+          혼합계산에서 순서를 지키는 법과 큰 수 계산에서 자릿수를 정렬하는
+          법을 자세히 다뤘다.
         </p>
-
-        <h2>큰 수 계산, 자릿수 정렬이 실수를 줄인다</h2>
-        <p>
-          네다섯 자리 수의 덧셈·뺄셈에서 가장 흔한 실수는 자릿수를 잘못
-          맞춰 쓰는 것이다. 세로셈에서 자릿수 칸을 흐트러뜨리지 않고 맞춰
-          쓰는 연습만으로 오답률이 눈에 띄게 준다. 암산으로 넘어가고 싶어
-          하는 아이일수록 이 시기엔 세로셈을 또박또박 쓰게 하는 쪽이
-          장기적으로 유리하다.
-        </p>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          <TopicLink
+            href="/grade-4/accuracy-over-speed"
+            title="혼합계산, 속도보다 계산 순서가 먼저인 이유"
+            description="규칙을 알아도 실제 문제에서 놓치는 경우가 흔하다"
+          />
+          <TopicLink
+            href="/grade-4/place-value"
+            title="큰 수 계산, 자릿수 정렬로 실수 줄이기"
+            description="가장 흔한 실수는 자릿수를 잘못 맞춰 쓰는 것"
+          />
+        </div>
 
         <AdSlot id="grade4-infeed-1" />
 
