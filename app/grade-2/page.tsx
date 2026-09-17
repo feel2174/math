@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
 import TopicLink from "@/components/TopicLink";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초2 구구단 외우기, 곱셈 개념이 먼저다",
+  title: "초2 수학 공부법, 두 자리 덧셈뺄셈과 구구단 원리 정복",
   description:
-    "초2 구구단은 암기 전에 곱셈 개념부터 잡아야 오래간다. 암기 순서와 하루 분량 기준을 정리했다.",
+    "초2 연산의 핵심은 두 자리 받아올림 세로셈의 정착과 구구단 개념 이해입니다. 무작정 암기가 아닌 동수누가 원리와 단계별 지도법을 안내합니다.",
   alternates: { canonical: "/grade-2" },
   openGraph: {
-    title: "초2 구구단 외우기, 곱셈 개념이 먼저다",
+    title: "초2 수학 공부법, 두 자리 덧셈뺄셈과 구구단 원리 정복",
     description:
-      "초2 구구단은 암기 전에 곱셈 개념부터 잡아야 오래간다. 암기 순서와 하루 분량 기준을 정리했다.",
+      "초2 연산의 핵심은 두 자리 받아올림 세로셈의 정착과 구구단 개념 이해입니다. 무작정 암기가 아닌 동수누가 원리와 단계별 지도법을 안내합니다.",
     url: "/grade-2",
   },
 };
@@ -25,78 +25,140 @@ export default function Grade2() {
   return (
     <Container>
       <PageHero
-        eyebrow="초2 구구단 외우기"
-        title="초2 구구단 외우기, 곱셈 개념이 먼저다"
-        description="암기는 개념을 잡은 다음이다."
+        eyebrow="초2 연산 정밀 진단"
+        title="초2 수학 공부법, 두 자리 덧셈뺄셈과 구구단의 벽 넘기"
+        description="받아올림 세로셈과 구구단 암기. 이 두 관문에서 연산의 체계가 잡히거나 거부감이 시작됩니다."
       />
 
       <article className="article">
         <p>
-          초2 구구단은 여름방학 특훈처럼 몰아붙이는 과제가 되기 쉽다. 하지만
-          노래처럼 외우기만 하고 곱셈 개념을 놓치면, 3학년 문장제에서 언제
-          곱셈을 써야 할지 판단하지 못한다. 암기표를 채우기 전에 &quot;같은
-          수를 여러 번 더하는 것&quot;이라는 감각부터 심어야 한다.
+          초등학교 2학년은 수학 학습에서 <strong>&lsquo;본격적인 연산의 분수령&rsquo;</strong>을 맞이하는 해입니다.
+          1학기에는 두 자리 수의 덧셈과 뺄셈에서 두 번 이상의 받아올림·받아내림을 만나고,
+          2학기에는 평생 쓰게 될 <strong>구구단(곱셈구구)</strong>을 배웁니다.
         </p>
 
-        <h2>초2에서 먼저 잡아야 할 것</h2>
         <p>
-          곱셈 개념을 먼저 잡는 법과 구구단 암기 순서, 두 가지를 자세히
-          다뤘다.
+          만약{" "}
+          <Link href="/grade-1" className="inline-link font-semibold">
+            초1 수 감각과 10의 보수
+          </Link>
+          가 충분히 여물지 않은 상태에서 초2 세로셈에 진입하면,
+          아이는 받아올림한 숫자 &lsquo;1&rsquo;을 어디에 적어야 할지 몰라 헤매고,
+          손가락을 몰래 펴느라 연산 시간이 3배 이상 늘어납니다.
+          이는 고스란히{" "}
+          <Link href="/grade-3" className="inline-link font-semibold">
+            초3 나눗셈과 분수
+          </Link>
+          의 학습 포기로 이어집니다.
         </p>
+
+        <ExternalCta
+          heading="초2 연산의 두 기둥, 우리 아이 상태는?"
+          description="매쓰클리닉 AI 정밀 진단으로 받아올림 누락 오류와 구구단 암기 체계를 5분 만에 진단해보세요."
+          label="초2 무료 AI 진단 시작하기"
+          href="/#trial"
+        />
+
+        <h2>초2 연산에서 완벽히 마스터해야 할 핵심 2대 주제</h2>
+        <p>
+          초2에서는 세로셈의 기계적 계산법보다 &lsquo;묶음의 원리&rsquo;를 이해하는 것이 훨씬 중요합니다.
+        </p>
+
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <TopicLink
             href="/grade-2/multiplication-concept"
-            title="곱셈 개념이 먼저, 암기는 그다음"
-            description="3+3+3+3에서 3×4로 이어지는 감각 잡기"
+            title="곱셈의 본질: 동수누가와 묶어 세기"
+            description="3×4는 왜 3+3+3+3일까? 기계식 암기 대신 묶음 모델로 곱셈의 직관을 심어주는 법"
           />
           <TopicLink
             href="/grade-2/times-table-order"
-            title="구구단 암기 순서, 2단부터 9단까지"
-            description="쉬운 단부터 잡고 어려운 단은 유도한다"
+            title="구구단 암기, 2단부터 순서대로 외우면 안 되는 이유"
+            description="패턴이 쉬운 2·5단 → 4·8단 배수 관계 → 3·6·9단 → 난코스 7단 공략 로드맵"
           />
         </div>
 
-        <ExternalCta
-          heading="구구단 익힘 문제지가 필요하다면"
-          description="11math.com에서 곱셈 개념부터 구구단 암기용까지 단계별로 받을 수 있다."
-        />
+        <h2>매쓰클리닉 AI가 포착하는 초2 대표 오답 메커니즘</h2>
+        <p>
+          초2 아이들의 오답지를 분석해보면 대다수가 다음 세 가지 인지적 함정에 빠져 있습니다.
+        </p>
 
-        <AdSlot id="grade2-infeed-1" />
+        <ul>
+          <li>
+            <strong>1. 받아올림 수 합산 누락:</strong> 일의 자리에서 7+8=15로 십의 자리에 1을 올려놓고도,
+            정작 십의 자리(예: 3+4)를 계산할 때 올려둔 1을 더하지 않고 그냥 7로 적는 실수입니다.
+            이는 시각적 공간 배치와 작업 기억(Working Memory)의 문제입니다.
+          </li>
+          <li>
+            <strong>2. 작은 수에서 큰 수 빼기 오류:</strong> 52 - 27을 계산할 때, 일의 자리 2에서 7을 못 빼니
+            무의식적으로 거꾸로 7 - 2 = 5로 적어버리는 전형적인 오류입니다.
+            받아내림을 통해 십의 자리에서 10을 빌려오는 메커니즘을 구체물로 확인시켜 주어야 합니다.
+          </li>
+          <li>
+            <strong>3. 구구단 1초 룰 실패:</strong> 7×8을 물었을 때 &ldquo;칠일은 칠, 칠이 십사...&rdquo; 하며
+            처음부터 읊고 있다면 아직 장기기억으로 인출되지 않은 상태입니다.
+            이는{" "}
+            <Link href="/grade-3/division-meaning" className="inline-link">
+              초3 나눗셈 세로셈
+            </Link>
+            을 풀 때 몫을 예측하지 못해 연산 속도가 극도로 느려지는 원인이 됩니다.
+          </li>
+        </ul>
 
-        <h2>초2 하루 학습 가이드</h2>
+        <h2>초2 하루 연산 학습 기준</h2>
         <DataTable
-          columns={["단계", "분량", "소요 시간", "중점"]}
+          columns={["시기", "권장 분량", "소요 시간", "핵심 클리닉 목표"]}
           rows={[
-            ["도입", "반 장", "10분", "묶어 세기, 곱셈 개념"],
-            ["암기 초반", "1장", "15분", "2, 5단"],
-            ["암기 완성", "1~2장", "15~20분", "전체 단, 유도 계산"],
+            ["1학기", "1장 (20문항)", "12~15분", "두 자리 덧셈·뺄셈 세로셈 자릿수 정렬 훈련"],
+            ["여름방학", "1장 (묶음 놀이)", "10분", "동수누가(같은 수 더하기)로 곱셈 직관 형성"],
+            ["2학기 초", "1~1.5장", "15분", "구구단 배수 규칙 파악 및 불규칙 구구 카드 게임"],
+            ["2학기 말", "1장", "15분 이내", "구구단 랜덤 인출 (1초 즉답) 및 길이·시각 측정 연산"],
           ]}
         />
 
         <p>
-          구구단은 시험처럼 외우게 하면 거부감이 커진다. 차 안, 목욕 시간처럼
-          부담 없는 순간에 짧게 반복하는 쪽이 효과적이다. 문제지는 이렇게
-          익힌 단을 확인하고 속도를 붙이는 용도로 쓴다.
-        </p>
-
-        <AdSlot id="grade2-infeed-2" />
-
-        <p>
-          구구단을 다 외웠다고 끝이 아니다. 곱셈구구를 활용한 간단한
-          문장제를 함께 풀어야 개념이 자리 잡았는지 확인할 수 있다. 이
-          단계를 건너뛰고 3학년 나눗셈으로 넘어가면 격차가 더 벌어진다. 초2
-          2학기엔 곱셈 문장제 비중을 조금씩 늘린다.
-        </p>
-        <p>
-          암기 속도는 아이마다 차이가 크다. 한 달이면 다 외우기도, 학기
-          내내 걸리기도 한다. 옆집과 비교하는 대신 어제와 오늘을 비교해주는
-          쪽이 효과적이다. 채점 후 틀린 문제는{" "}
-          <Link href="/odap-note" className="inline-link">
-            오답노트
+          틀린 문제를 다룰 때는 아이를 나무라지 말고,{" "}
+          <Link href="/odap-note" className="inline-link font-semibold">
+            매쓰클리닉 오답 분석표
           </Link>
-          에 이유를 남겨두면 다음
-          문제지에서 같은 실수가 준다.
+          를 활용하여 &lsquo;받아올림 실수인지&rsquo;, &lsquo;구구단 암기 오류인지&rsquo; 체크박스로 스스로 짚어보게 하세요.
+          스스로 오류의 유형을 명명하는 순간 재발률이 절반으로 떨어집니다.
         </p>
+
+        {/* 계통 수학 브릿지 */}
+        <CurriculumBridge
+          title="초2 계통 수학 연계 로드맵"
+          subtitle="초2의 곱셈과 세로셈은 초등 고학년 수학의 기초 체력입니다. 전후 연계를 반드시 확인하세요."
+          items={[
+            {
+              grade: "이전 결손 확인",
+              href: "/grade-1/carrying",
+              topic: "초1 10의 보수와 받아올림",
+              description: "초2 두 자리 연산이 흔들린다면 초1 단계의 10 만들기 보수 연습을 다시 점검해야 합니다.",
+              type: "prev",
+            },
+            {
+              grade: "다음 단계 연계",
+              href: "/grade-3",
+              topic: "초3 나눗셈과 분수의 시작",
+              description: "구구단이 즉답 수준으로 완성되어야 초3 나눗셈 구구와 분수 등분할 개념으로 순탄하게 진입합니다.",
+              type: "next",
+            },
+            {
+              grade: "핵심 세부 클리닉",
+              href: "/grade-2/times-table-order",
+              topic: "구구단 암기 전략 로드맵",
+              description: "기계적 통암기가 아닌 두뇌 인지 패턴에 맞춘 효율적 구구단 정복 가이드입니다.",
+              type: "related",
+            },
+            {
+              grade: "고학년 연계 주의보",
+              href: "/grade-4/accuracy-over-speed",
+              topic: "초4 혼합계산과 정확도",
+              description: "초2 때 형성된 암산 습관이 초4 복잡한 식에서 검산 불가능한 치명적 약점으로 변질되지 않도록 주의하세요.",
+              type: "related",
+            },
+          ]}
+        />
       </article>
 
       <GradeNav current={2} />

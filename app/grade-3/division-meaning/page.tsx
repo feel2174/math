@@ -1,83 +1,93 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import GradeNav from "@/components/GradeNav";
 import { SubtopicBreadcrumb, SiblingLink } from "@/components/SubtopicNav";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초3 나눗셈, 등분제와 포함제 구분하는 법",
+  title: "나눗셈의 개념, 등분제와 포함제를 구분해야 하는 이유 | 초3 수학 클리닉",
   description:
-    "나눗셈에는 두 가지 의미가 있다. 문장제에서 헷갈리지 않는 법을 정리했다.",
+    "사탕을 똑같이 나누어주기(등분제)와 몇 개씩 묶어 덜어내기(포함제). 이 두 가지 나눗셈 상황을 직관적으로 구분해야 초4 분수 나눗셈까지 막힘없이 이어집니다.",
   alternates: { canonical: "/grade-3/division-meaning" },
-  openGraph: {
-    title: "초3 나눗셈, 등분제와 포함제 구분하는 법",
-    description:
-      "나눗셈에는 두 가지 의미가 있다. 문장제에서 헷갈리지 않는 법을 정리했다.",
-    url: "/grade-3/division-meaning",
-  },
 };
 
 export default function DivisionMeaning() {
   return (
     <Container>
       <div className="pt-6">
-        <SubtopicBreadcrumb gradeHref="/grade-3" gradeLabel="초3" />
+        <SubtopicBreadcrumb gradeHref="/grade-3" gradeLabel="초3 가이드" />
       </div>
       <PageHero
-        eyebrow="초3 나눗셈 · 분수 첫 도입"
-        title="초3 나눗셈, 등분제와 포함제 구분하는 법"
-        description="같은 12÷3도 묻는 상황이 다르다."
+        eyebrow="초3 나눗셈 클리닉"
+        title="나눗셈의 두 얼굴: 묶기와 똑같이 나누기"
+        description="기계식 나눗셈 부호 계산 전에 상황을 그림으로 모델링하는 직관을 심어주어야 합니다."
       />
 
       <article className="article">
         <p>
-          나눗셈에는 &quot;똑같이 나누기&quot;(등분제)와 &quot;몇 묶음인지
-          세기&quot;(포함제) 두 의미가 있다. 이 둘을 구분하지 못하면
-          문장제에서 헷갈린다.
+          수학에서 12÷3은 두 가지 전혀 다른 실생활 상황을 가집니다.
+          첫째는 <strong>사탕 12개를 3명에게 똑같이 나누어주는 상황(등분제)</strong>이고,
+          둘째는 <strong>사탕 12개를 3개씩 봉지에 묶어 담는 상황(포함제)</strong>입니다.
         </p>
 
-        <h2>등분제: 몇 개씩 나눠 갖는가</h2>
         <p>
-          12÷3을 &quot;사탕 12개를 3명에게 똑같이 나누면 몇 개씩&quot;으로
-          이해하는 방식이다. 전체를 몇 묶음으로 나눌지가 정해져 있고, 한
-          묶음의 크기를 구한다.
-        </p>
-
-        <h2>포함제: 몇 묶음이 나오는가</h2>
-        <p>
-          같은 12÷3을 &quot;사탕 12개를 3개씩 묶으면 몇 묶음&quot;으로
-          이해할 수도 있다. 한 묶음의 크기가 정해져 있고, 몇 묶음이
-          나오는지를 구한다. 답은 같은 4지만 묻는 상황이 다르다.
+          아이들이 문장제 문제에서 식을 세우지 못하는 이유는 이 둘의 차이를 모른 채 무조건 &lsquo;큰 수 ÷ 작은 수&rsquo;로
+          기계적 나눗셈만 했기 때문입니다.
+          특히 포함제(몇 번 덜어낼 수 있는가) 개념이 약하면{" "}
+          <Link href="/grade-6" className="inline-link font-semibold">
+            초6 분수 나눗셈(3/4 ÷ 1/8)
+          </Link>
+          에서 4분의 3 안에 8분의 1이 몇 번 들어있는지를 전혀 상상하지 못합니다.
         </p>
 
         <ExternalCta
-          heading="초3 나눗셈 · 분수 문제지가 필요하다면"
-          description="11math.com에서 등분제·포함제, 분수 개념별 문제지를 받을 수 있다."
+          heading="우리 아이 나눗셈 문장제 식 세우기 능력은?"
+          description="매쓰클리닉 AI 정밀 진단으로 몫과 나머지, 포함제·등분제 독해력을 5분 만에 진단해보세요."
+          label="나눗셈 무료 AI 정밀 진단"
+          href="/#trial"
         />
 
-        <h2>구체물로 두 상황을 다 경험시킨다</h2>
-        <p>
-          문제지를 풀기 전에 사탕이나 블록으로 두 상황을 직접 나눠보게
-          한다. 등분제는 &quot;3명에게 나눠주기&quot;, 포함제는
-          &quot;3개씩 묶기&quot;로 실제로 손을 움직여본다. 이 경험이 있어야
-          나눗셈 문장제에서 어떤 상황인지 빠르게 알아챈다.
-        </p>
+        <h2>나눗셈 지도 시 반드시 짚어야 할 2가지 핵심</h2>
+        <ul>
+          <li>
+            <strong>1. 곱셈과의 가역성(역연산):</strong> 12 ÷ 3 = □ 는 곧 3 × □ = 12 라는 구구단의 빈칸 채우기입니다.
+            곱셈을 반대로 되감는 사고가 자연스러워야 세로셈에서 몫을 즉시 올려 쓸 수 있습니다.
+          </li>
+          <li>
+            <strong>2. 나머지의 본질:</strong> &ldquo;더 이상 3개씩 묶어 담을 수 없어서 남은 것&rdquo;이 나머지입니다.
+            따라서 나머지는 항상 나누는 수(3)보다 작아야 한다는 절대 규칙을 그림으로 확인시켜 줍니다.
+          </li>
+        </ul>
 
-        <AdSlot id="grade3-division-infeed-1" />
-
-        <p>
-          많은 문제지가 등분제 위주로 구성돼 있다. 포함제 상황도 의도적으로
-          섞어서 풀려야 두 감각이 고르게 자란다.
-        </p>
+        <CurriculumBridge
+          title="관련 연계 학습"
+          items={[
+            {
+              grade: "초2 구구단 연계",
+              href: "/grade-2/times-table-order",
+              topic: "구구단 암기 체계",
+              description: "나눗셈 몫 찾기가 더디다면 초2 구구단의 인출 속도를 재정비해야 합니다.",
+              type: "prev",
+            },
+            {
+              grade: "초3 분수 연계",
+              href: "/grade-3/fraction-intro",
+              topic: "분수의 첫걸음과 전체의 양",
+              description: "등분할 나눗셈의 결과가 곧 단위분수의 크기로 확장됩니다.",
+              type: "next",
+            },
+          ]}
+        />
       </article>
 
       <SiblingLink
         href="/grade-3/fraction-intro"
-        label="분수, 처음 배울 때 꼭 잡아야 할 개념"
+        label="분수의 첫걸음, 전체에 대한 부분의 크기"
+        direction="next"
       />
-
       <GradeNav current={3} />
     </Container>
   );

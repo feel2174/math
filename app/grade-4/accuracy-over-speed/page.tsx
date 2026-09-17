@@ -1,83 +1,94 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import GradeNav from "@/components/GradeNav";
 import { SubtopicBreadcrumb, SiblingLink } from "@/components/SubtopicNav";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초4 혼합계산, 속도보다 계산 순서가 먼저인 이유",
+  title: "초4 연산, 속도 강박을 버려야 정확도가 오른다 | 식 쓰기 클리닉",
   description:
-    "혼합계산은 계산 순서를 지키는 게 먼저다. 흔한 실수와 점검법을 정리했다.",
+    "연산 문제지를 빨리 푸는 아이가 고학년에서 무너지는 이유. 암산의 조급함을 멈추고 풀이과정을 줄 맞춰 쓰는 트리형 식 전개법을 안내합니다.",
   alternates: { canonical: "/grade-4/accuracy-over-speed" },
-  openGraph: {
-    title: "초4 혼합계산, 속도보다 계산 순서가 먼저인 이유",
-    description:
-      "혼합계산은 계산 순서를 지키는 게 먼저다. 흔한 실수와 점검법을 정리했다.",
-    url: "/grade-4/accuracy-over-speed",
-  },
 };
 
 export default function AccuracyOverSpeed() {
   return (
     <Container>
       <div className="pt-6">
-        <SubtopicBreadcrumb gradeHref="/grade-4" gradeLabel="초4" />
+        <SubtopicBreadcrumb gradeHref="/grade-4" gradeLabel="초4 가이드" />
       </div>
       <PageHero
-        eyebrow="초4 수학 어려워요"
-        title="초4 혼합계산, 속도보다 계산 순서가 먼저인 이유"
-        description="규칙을 알아도 실제 문제에서 놓치는 경우가 흔하다."
+        eyebrow="초4 연산 태도 교정"
+        title="속도 강박을 버려야 고학년 수학이 산다"
+        description="빨리 풀고 놀겠다는 조급함이 만든 오답 루프. 단계를 생략하지 않는 정갈한 풀이 훈련."
       />
 
       <article className="article">
         <p>
-          곱셈·나눗셈을 덧셈·뺄셈보다 먼저 계산해야 한다는 규칙을 알면서도
-          실제 문제에서 순서를 놓치는 경우가 흔하다.
+          &ldquo;우리 아이는 머리는 좋은데 문제를 너무 대충 풀어서 맨날 실수를 해요.&rdquo;
+          초4 학부모님들의 가장 흔한 하소연입니다.
+          하지만 이는 단순 실수가 아닙니다.
+          초1~3 저학년 때 &lsquo;문제지 빨리 끝내기&rsquo; 경쟁을 시키면서 심어진 <strong>&lsquo;속도 강박증&rsquo;</strong>의 폐해입니다.
         </p>
 
-        <h2>괄호부터, 곱셈·나눗셈 다음, 덧셈·뺄셈 마지막</h2>
         <p>
-          혼합계산의 기본 순서다. 3+4×2를 왼쪽부터 순서대로 계산하면
-          14가 나오지만, 규칙대로 곱셈을 먼저 하면 11이 맞다. 이 차이를
-          직접 두 가지로 계산해보며 왜 순서가 중요한지 체감시킨다.
-        </p>
-
-        <h2>풀이 과정에 순서를 표시하게 한다</h2>
-        <p>
-          답만 확인하지 말고 어떤 부분을 먼저 계산했는지 번호나 동그라미로
-          표시하게 한다. 순서를 의식하고 있는지 눈으로 확인할 수 있다.
-          답이 틀렸을 때 순서 실수인지 계산 실수인지 구분하는 데도 도움이
-          된다.
+          복잡한 혼합계산과{" "}
+          <Link href="/grade-5" className="inline-link font-semibold">
+            초5 분수 통분
+          </Link>
+          은 뇌의 작업 기억량(Working Memory)을 초과하기 때문에,
+          암산으로 중간 과정을 생략하면 100% 뇌부하 오류가 발생합니다.
         </p>
 
         <ExternalCta
-          heading="초4 혼합계산 문제지가 필요하다면"
-          description="11math.com에서 큰 수 연산부터 혼합계산까지 단계별로 받을 수 있다."
+          heading="우리 아이 연산 속도 vs 정확도 균형 진단"
+          description="매쓰클리닉 AI 정밀 진단으로 속도 대비 오답 발생률을 정밀 측정해보세요."
+          label="정확도 무료 AI 진단"
+          href="/#trial"
         />
 
-        <h2>흔한 실수 두 가지</h2>
-        <p>
-          괄호 안을 다 계산하지 않고 넘어가는 실수, 곱셈·나눗셈을 왼쪽부터
-          순서대로 하지 않고 뒤섞어 계산하는 실수가 흔하다. 특히 나눗셈과
-          곱셈이 같이 나오면 왼쪽에서 오른쪽 순서로 계산해야 하는데 이
-          규칙을 놓치는 경우가 많다.
-        </p>
+        <h2>정확도를 2배로 올리는 트리형(Tree) 식 쓰기 3원칙</h2>
+        <ol>
+          <li>
+            <strong>1. 연산 순서 번호 매기기:</strong> 괄호와 사칙연산 기호 위에 ①, ②, ③ 번호를 먼저 매깁니다.
+          </li>
+          <li>
+            <strong>2. 계산하지 않은 부분은 그대로 내려쓰기:</strong> 계산한 부분만 결과로 바꾸고 나머지 숫자와 부호는 줄을 맞춰 그대로 내려씁니다.
+          </li>
+          <li>
+            <strong>3. 등호(=) 세로로 맞추기:</strong> 식의 좌우 균형과 등호(=)를 일직선으로 맞추어 시각적 혼란을 제거합니다.
+          </li>
+        </ol>
 
-        <AdSlot id="grade4-accuracy-infeed-1" />
-
-        <p>
-          속도가 느려진 것처럼 보여도 순서를 의식하는 과정이 늘어난
-          것뿐이다. 정답률이 안정적으로 오르는지를 속도보다 먼저 본다.
-        </p>
+        <CurriculumBridge
+          title="관련 연계 학습"
+          items={[
+            {
+              grade: "초4 자리값 연계",
+              href: "/grade-4/place-value",
+              topic: "큰 수의 자릿값 정렬",
+              description: "식 쓰기 줄 맞추기와 큰 수의 자릿수 배치가 결합되는 다음 단계 가이드입니다.",
+              type: "next",
+            },
+            {
+              grade: "오답 관리 연계",
+              href: "/odap-note",
+              topic: "스마트 오답 리포트",
+              description: "조급한 계산으로 틀린 오답을 스스로 원인 분석하여 속도 강박을 치료하는 법.",
+              type: "related",
+            },
+          ]}
+        />
       </article>
 
       <SiblingLink
         href="/grade-4/place-value"
-        label="큰 수 계산, 자릿수 정렬로 실수 줄이기"
+        label="큰 수의 자릿값과 0의 개수 착오 정복"
+        direction="next"
       />
-
       <GradeNav current={4} />
     </Container>
   );

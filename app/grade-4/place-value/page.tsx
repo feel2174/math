@@ -1,83 +1,87 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import GradeNav from "@/components/GradeNav";
 import { SubtopicBreadcrumb, SiblingLink } from "@/components/SubtopicNav";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초4 큰 수 계산, 자릿수 정렬로 실수 줄이기",
+  title: "초4 큰 수의 자릿값과 0의 개수 착오 정복 | 자릿수 시각화",
   description:
-    "네다섯 자리 수 계산에서 자릿수를 맞춰 쓰는 연습법과 검산 습관을 정리했다.",
+    "만, 억, 조 단위의 큰 수에서 0을 하나 더 쓰거나 빼먹는 실수. 동양의 4자리 끊어 읽기 원리와 자릿값 표를 통한 완벽 교정법을 소개합니다.",
   alternates: { canonical: "/grade-4/place-value" },
-  openGraph: {
-    title: "초4 큰 수 계산, 자릿수 정렬로 실수 줄이기",
-    description:
-      "네다섯 자리 수 계산에서 자릿수를 맞춰 쓰는 연습법과 검산 습관을 정리했다.",
-    url: "/grade-4/place-value",
-  },
 };
 
 export default function PlaceValue() {
   return (
     <Container>
       <div className="pt-6">
-        <SubtopicBreadcrumb gradeHref="/grade-4" gradeLabel="초4" />
+        <SubtopicBreadcrumb gradeHref="/grade-4" gradeLabel="초4 가이드" />
       </div>
       <PageHero
-        eyebrow="초4 수학 어려워요"
-        title="초4 큰 수 계산, 자릿수 정렬로 실수 줄이기"
-        description="가장 흔한 실수는 자릿수를 잘못 맞춰 쓰는 것이다."
+        eyebrow="초4 큰 수 클리닉"
+        title="큰 수의 자릿값과 0의 개수 착오 정복"
+        description="동양의 4자리 끊어 읽기와 서양의 3자리 콤마(,) 표기의 충돌에서 오는 혼란을 완벽 해결합니다."
       />
 
       <article className="article">
         <p>
-          네다섯 자리 수의 덧셈·뺄셈에서 가장 흔한 실수는 자릿수를 잘못
-          맞춰 쓰는 것이다.
+          &ldquo;오천사백만칠천을 숫자로 써보렴.&rdquo;
+          초4 아이들에게 이 문제를 내면 54007000이나 5400007000 등 0의 개수가 제각각으로 나옵니다.
+          이는 우리말 수 체계(만, 억, 조 = 4자리 단위)와 아라비아 숫자의 3자리 콤마(, 단위)가
+          아이의 뇌 속에서 충돌하기 때문입니다.
         </p>
 
-        <h2>세로셈, 칸을 맞춰 쓴다</h2>
         <p>
-          일의 자리는 일의 자리끼리, 십의 자리는 십의 자리끼리 정확히 줄을
-          맞춰 쓰는 연습이 먼저다. 모눈종이나 자릿수 칸이 그어진 연습지를
-          쓰면 훨씬 수월하다. 암산으로 넘어가고 싶어 해도 이 시기엔
-          세로셈을 또박또박 쓰게 한다.
-        </p>
-
-        <h2>역연산으로 검산한다</h2>
-        <p>
-          덧셈은 뺄셈으로, 뺄셈은 덧셈으로 되짚어 확인하는 습관을 들인다.
-          1234+5678을 계산했으면 결과에서 5678을 다시 빼서 1234가 나오는지
-          확인한다. 틀린 문제만이라도 이 습관을 들이면 스스로 실수를 찾는
-          힘이 생긴다.
+          이 자릿값 혼란을 교정하지 못하면, 세로셈에서 자리를 비워두고 계산하거나,{" "}
+          <Link href="/grade-6" className="inline-link font-semibold">
+            초6 소수의 곱셈과 나눗셈
+          </Link>
+          에서 소수점의 위치를 엉뚱한 곳에 찍게 됩니다.
         </p>
 
         <ExternalCta
-          heading="초4 혼합계산 문제지가 필요하다면"
-          description="11math.com에서 큰 수 연산부터 혼합계산까지 단계별로 받을 수 있다."
+          heading="우리 아이 큰 수 자릿값 인지력 진단"
+          description="매쓰클리닉 AI 정밀 진단으로 0의 누락 및 큰 수 읽기·쓰기 정확도를 5분 만에 진단해보세요."
+          label="큰 수 무료 AI 정밀 진단"
+          href="/#trial"
         />
 
-        <h2>어림으로 먼저 확인한다</h2>
+        <h2>4자리씩 끊는 &lsquo;만·억·조&rsquo; 밑줄 비법</h2>
         <p>
-          계산 전에 &quot;대략 얼마나 나올지&quot; 어림해보는 습관도 실수를
-          줄인다. 1234+5678은 대략 1200+5700이니 7000 근처가 나와야 한다.
-          계산 결과가 어림값과 크게 다르면 자릿수가 밀렸다는 신호다.
+          숫자를 뒤에서부터 4자리씩 연필로 끊어 읽는 습관을 들이게 하세요.
+          [ 5400 | 7000 ] 으로 끊고 앞의 덩어리에 &lsquo;만&rsquo;을 붙여 읽게 하면,
+          빈자리에 0이 몇 개 들어가야 하는지 직관적으로 눈에 들어옵니다.
         </p>
 
-        <AdSlot id="grade4-place-value-infeed-1" />
-
-        <p>
-          자릿수 정렬과 검산 습관은 이후 혼합계산, 분수 계산까지 이어지는
-          기초 체력이다.
-        </p>
+        <CurriculumBridge
+          title="관련 연계 학습"
+          items={[
+            {
+              grade: "초4 태도 교정",
+              href: "/grade-4/accuracy-over-speed",
+              topic: "속도 강박과 식 쓰기",
+              description: "자리값이 삐뚤빼뚤해지는 근본 원인인 조급한 암산을 치료하는 클리닉입니다.",
+              type: "prev",
+            },
+            {
+              grade: "초5 소수 연계",
+              href: "/grade-5",
+              topic: "초5 소수와 분수 융합",
+              description: "정수 자리값의 원리가 소수 첫째 자리, 둘째 자리로 확장되는 연결 가이드입니다.",
+              type: "next",
+            },
+          ]}
+        />
       </article>
 
       <SiblingLink
         href="/grade-4/accuracy-over-speed"
-        label="혼합계산, 속도보다 계산 순서가 먼저인 이유"
+        label="속도 강박을 버려야 정확도가 오른다"
+        direction="prev"
       />
-
       <GradeNav current={4} />
     </Container>
   );

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { pretendard } from "./fonts";
 import Header from "@/components/Header";
@@ -10,16 +9,19 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "연산 문제지 활용법 | math.zucca100",
-    template: "%s | math.zucca100",
+    default: "매쓰클리닉 | 초등 연산 AI 취약점 진단 및 1:1 맞춤 처방 솔루션",
+    template: "%s | 매쓰클리닉",
   },
   description:
-    "학년별 연산 문제지 활용법과 오답노트 작성법을 정리합니다. 초1부터 초6까지 하루 학습량, 개념 순서, 흔한 실수 유형을 확인하세요.",
+    "하루 수십 문제 단순 반복은 그만. 5분 AI 진단으로 우리 아이 구멍 난 연산 취약점만 찾아내 하루 1장 맞춤 처방지를 제공하는 초등 연산 에듀테크 솔루션입니다.",
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    siteName: "math.zucca100",
+    siteName: "매쓰클리닉 (MathClinic)",
     url: siteUrl,
+    title: "매쓰클리닉 | 초등 연산 AI 취약점 진단 및 1:1 맞춤 처방",
+    description:
+      "5분 AI 연산 정밀 진단으로 취약점만 골라 하루 1장 맞춤 처방하는 초등 수학 솔루션",
   },
   robots: {
     index: true,
@@ -40,23 +42,17 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${pretendard.variable} antialiased`}>
       <body className="flex min-h-screen flex-col bg-background text-foreground">
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196149361612087"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "math.zucca100",
+              "@type": "EducationalOrganization",
+              name: "매쓰클리닉 (MathClinic)",
               url: siteUrl,
               inLanguage: "ko-KR",
               description:
-                "학년별 연산 문제지 활용법과 오답노트 작성법을 정리하는 사이트",
+                "초등 연산 AI 취약점 진단 및 1:1 맞춤 처방지 솔루션",
             }),
           }}
         />
@@ -68,3 +64,4 @@ export default function RootLayout({
     </html>
   );
 }
+

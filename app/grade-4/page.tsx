@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import DataTable from "@/components/DataTable";
 import GradeNav from "@/components/GradeNav";
 import TopicLink from "@/components/TopicLink";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초4 수학이 어려워요, 속도보다 정확도",
+  title: "초4 수학 공부법, 혼합계산 순서와 자리값 오류 탈출하기",
   description:
-    "초4는 혼합계산과 큰 수가 겹치며 정확도가 시험대에 오르는 시기다. 실수를 줄이는 기준을 정리했다.",
+    "초4 연산은 복잡한 식의 연산 순서와 큰 수의 자리값 정렬이 핵심입니다. 속도 강박을 버리고 정확도와 식 쓰기 습관을 바로잡는 클리닉을 소개합니다.",
   alternates: { canonical: "/grade-4" },
   openGraph: {
-    title: "초4 수학이 어려워요, 속도보다 정확도",
+    title: "초4 수학 공부법, 혼합계산 순서와 자리값 오류 탈출하기",
     description:
-      "초4는 혼합계산과 큰 수가 겹치며 정확도가 시험대에 오르는 시기다. 실수를 줄이는 기준을 정리했다.",
+      "초4 연산은 복잡한 식의 연산 순서와 큰 수의 자리값 정렬이 핵심입니다. 속도 강박을 버리고 정확도와 식 쓰기 습관을 바로잡는 클리닉을 소개합니다.",
     url: "/grade-4",
   },
 };
@@ -25,74 +25,124 @@ export default function Grade4() {
   return (
     <Container>
       <PageHero
-        eyebrow="초4 수학 어려워요"
-        title="초4 수학이 어려워요, 속도보다 정확도"
-        description="빨리 푸는 것보다 순서를 지키는 게 먼저다."
+        eyebrow="초4 연산 정밀 진단"
+        title="초4 수학 공부법, 혼합계산과 자리값에서 실수를 잡는 법"
+        description="암산의 한계가 오는 시기. 긴 식을 질서정연하게 전개하는 &lsquo;식 쓰기 습관&rsquo;이 초등 고학년 수학의 성패를 가릅니다."
       />
 
       <article className="article">
         <p>
-          초4부터 다루는 수의 자릿수가 커지고, 사칙연산이 한 문제에 섞인
-          혼합계산이 본격 등장한다. 이전엔 한 연산만 빠르게 하면 됐지만,
-          이제는 어떤 순서로 계산할지 판단하는 능력이 필요하다. 이 전환을
-          놓치면 &quot;예전엔 잘했는데 갑자기 어려워요&quot;라는 말이 나온다.
+          초등학교 4학년은 지금까지 감각과 암산으로 수학 문제를 풀어오던 아이들이 <strong>&lsquo;가장 심한 벽&rsquo;</strong>을 만나는 시기입니다.
+          만 단위, 억 단위, 조 단위까지 커지는 <strong>큰 수의 자릿값</strong>과
+          덧셈·뺄셈·곱셈·나눗셈에 소괄호·중괄호까지 얽힌 <strong>자연수의 혼합계산</strong>이 등장하기 때문입니다.
+        </p>
+
+        <p>
+          이때 아이가 여전히 연습장 구석에 낙서하듯 흘려 쓰고 암산으로만 해결하려 든다면,
+          계산 순서가 뒤엉켜 어이없는 오답을 반복하게 됩니다.
+          초4에서 식을 한 줄씩 단계별로 내려쓰는 습관을 들이지 못하면,{" "}
+          <Link href="/grade-5" className="inline-link font-semibold">
+            초5 분수·소수 복합 연산
+          </Link>
+          과 중등 일차방정식에서는 손을 댈 수조차 없게 됩니다.
         </p>
 
         <ExternalCta
-          heading="초4 혼합계산 문제지가 필요하다면"
-          description="11math.com에서 큰 수 연산부터 혼합계산까지 단계별로 받을 수 있다."
+          heading="초4 혼합계산, 우리 아이는 순서를 잘 지키고 있을까요?"
+          description="매쓰클리닉 AI 정밀 진단으로 연산 순서 오류율과 자릿수 누락 습관을 5분 만에 진단해보세요."
+          label="초4 무료 AI 진단 시작하기"
+          href="/#trial"
         />
 
-        <h2>초4에서 먼저 잡아야 할 것</h2>
+        <h2>초4에서 반드시 바로잡아야 할 핵심 2대 주제</h2>
         <p>
-          혼합계산에서 순서를 지키는 법과 큰 수 계산에서 자릿수를 정렬하는
-          법을 자세히 다뤘다.
+          기계적 문제풀이 속도보다 &lsquo;정확도&rsquo;와 &lsquo;자리값에 대한 통제력&rsquo;을 길러야 합니다.
         </p>
+
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <TopicLink
             href="/grade-4/accuracy-over-speed"
-            title="혼합계산, 속도보다 계산 순서가 먼저인 이유"
-            description="규칙을 알아도 실제 문제에서 놓치는 경우가 흔하다"
+            title="속도 강박을 버려야 정확도가 오른다"
+            description="빨리 풀기 경쟁이 낳는 치명적 오답 루프. 단계를 생략하지 않는 트리형 식 쓰기 지도법"
           />
           <TopicLink
             href="/grade-4/place-value"
-            title="큰 수 계산, 자릿수 정렬로 실수 줄이기"
-            description="가장 흔한 실수는 자릿수를 잘못 맞춰 쓰는 것"
+            title="큰 수의 자릿값과 0의 개수 착오 정복"
+            description="천만, 억, 조 단위에서 0을 빠뜨리는 원인 분석 및 4자리 끊어 읽기 시각화 훈련"
           />
         </div>
 
-        <AdSlot id="grade4-infeed-1" />
+        <h2>매쓰클리닉 AI가 포착한 초4 대표 오답 유형 3가지</h2>
+        <ul>
+          <li>
+            <strong>1. 왼쪽에서 오른쪽으로 그냥 계산하기:</strong> 20 - 4 × 3을 볼 때 곱셈을 먼저 해야 한다는
+            규칙을 깜빡하고 20-4=16을 먼저 한 뒤 16×3=48로 답을 쓰는 오류입니다.
+            연산 우선순위를 기호 위에 번호(①, ②)로 매기는 시각화 훈련이 필요합니다.
+          </li>
+          <li>
+            <strong>2. 괄호 안팎의 순서 착오:</strong> 괄호가 여러 개 겹쳐 있거나 나눗셈과 덧셈이 섞였을 때
+            작업 기억 한계로 인해 중간 계산값을 잊어버리고 엉뚱한 수를 대입하는 현상입니다.
+          </li>
+          <li>
+            <strong>3. 큰 수 자릿수 정렬 실패:</strong> 세로셈을 할 때 일의 자리, 십의 자리, 백의 자리를
+            삐뚤빼뚤하게 적어 다른 자리 숫자끼리 더하거나 빼는 단순 위치 정렬 실수입니다.
+          </li>
+        </ul>
 
-        <h2>초4 하루 학습 가이드</h2>
+        <h2>초4 일일 연산 배분과 권장 학습표</h2>
         <DataTable
-          columns={["영역", "분량", "소요 시간", "비고"]}
+          columns={["단원 영역", "하루 권장량", "풀이 시간", "핵심 점검 기준"]}
           rows={[
-            ["큰 수 연산", "1장", "15분", "자릿수 정렬 확인"],
-            ["혼합계산", "1장", "15~20분", "계산 순서 점검"],
-            ["검산 습관", "틀린 문제만", "5~10분", "역연산으로 확인"],
+            ["큰 수 읽기·쓰기", "1장", "10분", "4자리씩(만·억·조) 밑줄 긋고 읽기"],
+            ["혼합계산 순서", "1.5장 (15문항)", "15~18분", "연산 순서 번호 매기기 + 풀이 과정 3줄 내려쓰기"],
+            ["분수 덧셈·뺄셈(동분모)", "1장", "12분", "분모는 그대로 두고 분자만 계산하는 원리 확인"],
+            ["소수의 덧셈·뺄셈", "1장", "12분", "소수점(.) 위치 맞추어 세로셈 정렬하기"],
           ]}
         />
 
         <p>
-          이 시기부터 검산 습관이 특히 효과적이다. 덧셈은 뺄셈으로, 곱셈은
-          나눗셈으로 되짚는 역연산 검산을 틀린 문제만이라도 습관화하면
-          스스로 실수를 찾는 힘이 생긴다. 매번 채점해주기보다 검산으로 먼저
-          점검하게 하는 쪽이 오래 남는다. 자주 틀리는 유형은{" "}
-          <Link href="/odap-note" className="inline-link">
-            오답노트
+          초4부터는 틀린 문제의 풀이과정을 보존하는 것이 생명입니다.{" "}
+          <Link href="/odap-note" className="inline-link font-semibold">
+            매쓰클리닉 오답노트
           </Link>
-          에 남겨둔다.
+          에 틀린 중간 식을 남겨두면, &lsquo;내가 3번째 줄 괄호 풀 때 부호를 틀렸구나&rsquo;를 아이 스스로 발견할 수 있습니다.
         </p>
 
-        <AdSlot id="grade4-infeed-2" />
-
-        <p>
-          예전보다 푸는 속도가 느려진 것처럼 느껴질 수 있다. 대체로 퇴보가
-          아니라 계산 순서를 의식하는 절차가 늘어난 것뿐이다. 속도가 줄었다고
-          재촉하면 다시 순서를 건너뛰는 예전 습관으로 돌아간다. 정답률이
-          안정적으로 오르는지를 속도보다 먼저 본다. 속도는 정확도가 자리
-          잡은 뒤 따라오는 결과다.
-        </p>
+        {/* 계통 수학 브릿지 */}
+        <CurriculumBridge
+          title="초4 계통 수학 연계 로드맵"
+          subtitle="초4 혼합계산의 질서는 초5 통분과 중등 대수식 계산의 뼈대가 됩니다."
+          items={[
+            {
+              grade: "이전 결손 점검",
+              href: "/grade-3/division-meaning",
+              topic: "초3 나눗셈 연산력 점검",
+              description: "혼합계산에서 계속 오답이 난다면 초3 나눗셈과 두 자리 곱셈의 기초 연산력을 재확인하세요.",
+              type: "prev",
+            },
+            {
+              grade: "다음 단계 연계",
+              href: "/grade-5",
+              topic: "초5 약수·배수와 분수의 통분",
+              description: "초등 최대 고비인 초5 분수 단원으로 진입하기 전, 식 전개 능력과 정확도를 완성해야 합니다.",
+              type: "next",
+            },
+            {
+              grade: "태도 교정 클리닉",
+              href: "/grade-4/accuracy-over-speed",
+              topic: "정확도를 높이는 식 전개법",
+              description: "조급한 암산을 멈추고 한 줄씩 차분히 푸는 아이가 고학년 심화 문제에서 앞서 나갑니다.",
+              type: "related",
+            },
+            {
+              grade: "오답 관리 습관",
+              href: "/odap-note",
+              topic: "식 풀이 과정 오답노트",
+              description: "풀이 과정의 어느 줄에서 연산 오류가 발생했는지 짚어내는 정밀 오답 관리법입니다.",
+              type: "related",
+            },
+          ]}
+        />
       </article>
 
       <GradeNav current={4} />

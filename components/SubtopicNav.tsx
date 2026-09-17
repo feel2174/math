@@ -20,17 +20,24 @@ export function SubtopicBreadcrumb({
 export function SiblingLink({
   href,
   label,
+  direction = "next",
 }: {
   href: string;
   label: string;
+  direction?: "prev" | "next";
 }) {
   return (
     <Link
       href={href}
       className="not-prose mt-10 flex items-center justify-between rounded-xl border border-border bg-surface px-5 py-4 text-[14px] font-medium text-foreground transition-colors hover:border-accent-soft hover:bg-accent-soft/40"
     >
-      이어서 보기 · {label}
-      <span aria-hidden="true">→</span>
+      <span className="flex items-center gap-2">
+        {direction === "prev" && <span aria-hidden="true">←</span>}
+        <span>
+          {direction === "prev" ? "이전 주제" : "이어서 보기"} · {label}
+        </span>
+      </span>
+      {direction === "next" && <span aria-hidden="true">→</span>}
     </Link>
   );
 }

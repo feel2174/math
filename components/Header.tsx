@@ -4,35 +4,64 @@ import { grades, odapNoteLink } from "@/lib/nav";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-surface/85 backdrop-blur">
-      <Container className="flex h-14 items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-surface/90 backdrop-blur">
+      <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="shrink-0 text-[15px] font-bold tracking-tight text-foreground"
+          className="flex items-center gap-2 shrink-0 font-bold tracking-tight text-foreground"
         >
-          math<span className="text-accent">.</span>zucca100
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-white font-black text-base">
+            M
+          </span>
+          <span className="text-lg">
+            매쓰클리닉<span className="text-accent text-xs ml-1 font-semibold">AI</span>
+          </span>
         </Link>
         <nav
-          className="flex min-w-0 gap-1 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          aria-label="학년별 연산 가이드"
+          className="hidden md:flex items-center gap-1"
+          aria-label="서비스 주요 메뉴"
         >
-          {grades.map((g) => (
-            <Link
-              key={g.href}
-              href={g.href}
-              className="shrink-0 rounded-full px-2.5 py-1.5 text-[13px] font-medium text-muted transition-colors hover:bg-accent-soft hover:text-accent-strong"
-            >
-              {g.label}
-            </Link>
-          ))}
+          <Link
+            href="/#features"
+            className="rounded-lg px-3 py-1.5 text-[14px] font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-elevated"
+          >
+            특장점
+          </Link>
+          <Link
+            href="/#process"
+            className="rounded-lg px-3 py-1.5 text-[14px] font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-elevated"
+          >
+            진단 프로세스
+          </Link>
+          <Link
+            href="/#curriculum"
+            className="rounded-lg px-3 py-1.5 text-[14px] font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-elevated"
+          >
+            학년별 진단
+          </Link>
           <Link
             href={odapNoteLink.href}
-            className="shrink-0 rounded-full px-2.5 py-1.5 text-[13px] font-medium text-accent transition-colors hover:bg-accent-soft"
+            className="rounded-lg px-3 py-1.5 text-[14px] font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-elevated"
           >
-            오답노트
+            오답 분석기
+          </Link>
+          <Link
+            href="/#pricing"
+            className="rounded-lg px-3 py-1.5 text-[14px] font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-elevated"
+          >
+            요금제
           </Link>
         </nav>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/#trial"
+            className="rounded-full bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:opacity-90 active:scale-95"
+          >
+            5분 무료 진단받기
+          </Link>
+        </div>
       </Container>
     </header>
   );
 }
+

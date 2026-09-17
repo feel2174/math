@@ -1,81 +1,96 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import GradeNav from "@/components/GradeNav";
 import { SubtopicBreadcrumb, SiblingLink } from "@/components/SubtopicNav";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초5 통분 실수 유형 3가지와 고치는 법",
-  description: "통분에서 반복되는 세 가지 실수와 각각의 교정법을 정리했다.",
+  title: "통분할 때 가장 흔히 하는 치명적 실수 3가지 | 초5 분수 클리닉",
+  description:
+    "분모끼리 그냥 더해버리는 오답, 무조건 두 분모를 곱해 계산이 폭발하는 문제 등 초등 수학 70%가 겪는 통분 오답 유형과 해결책을 분석합니다.",
   alternates: { canonical: "/grade-5/common-denominator-mistakes" },
-  openGraph: {
-    title: "초5 통분 실수 유형 3가지와 고치는 법",
-    description:
-      "통분에서 반복되는 세 가지 실수와 각각의 교정법을 정리했다.",
-    url: "/grade-5/common-denominator-mistakes",
-  },
 };
 
 export default function CommonDenominatorMistakes() {
   return (
     <Container>
       <div className="pt-6">
-        <SubtopicBreadcrumb gradeHref="/grade-5" gradeLabel="초5" />
+        <SubtopicBreadcrumb gradeHref="/grade-5" gradeLabel="초5 가이드" />
       </div>
       <PageHero
-        eyebrow="초5 분수 계산 · 약분 통분"
-        title="초5 통분 실수 유형 3가지와 고치는 법"
-        description="어느 단계에서 틀렸는지 구분하면 연습이 빨라진다."
+        eyebrow="초5 분수 오답 클리닉"
+        title="통분할 때 가장 흔히 하는 치명적 실수 3가지"
+        description="초등 수포자의 70%가 여기서 발생합니다. 왜 아이들은 분모를 맞추지 못할까요?"
       />
 
       <article className="article">
-        <p>통분에서 아이들이 반복적으로 저지르는 실수는 크게 세 가지다.</p>
-
-        <h2>1. 분자를 안 곱하는 실수</h2>
         <p>
-          분모만 통분하고 분자는 그대로 두는 경우다. 1/2을 1/4로
-          통분하려면 분모를 2배로 늘린 만큼 분자도 2배로 늘려 2/4가
-          되어야 한다. 분모와 분자를 같은 수로 곱한다는 원칙을 문제마다
-          소리 내어 확인하게 한다.
+          1/2 + 1/3 = 2/5 라고 적는 아이의 시험지를 보고 충격을 받은 적이 있으신가요?
+          이 실수는 단순히 덤벙대서 나온 것이 아닙니다.
+          자연수 연산의 덧셈 규칙(&lsquo;위아래 다 더하기&rsquo;)이 분수의 본질(&lsquo;분모는 기준, 분자는 개수&rsquo;)과
+          충돌하면서 일어나는 대표적인 인지 혼란입니다.
         </p>
 
-        <h2>2. 공배수를 잘못 구하는 실수</h2>
         <p>
-          최소공배수 대신 아무 공배수나 써도 계산은 되지만, 숫자가 커져
-          이후 약분 단계에서 실수가 는다. 6과 8의 공배수로 48 대신
-          24(최소공배수)를 쓰면 계산이 훨씬 간단해진다. 공배수를 구하는
-          연습을 통분과 분리해서 따로 해보는 것도 도움이 된다.
+          이 치명적 실수를 잡지 않고 넘어가면,{" "}
+          <Link href="/grade-6" className="inline-link font-semibold">
+            초6 분수 나눗셈
+          </Link>
+          과 중등 식의 계산에서 완전히 길을 잃게 됩니다.
         </p>
 
         <ExternalCta
-          heading="초5 약분·통분 문제지가 필요하다면"
-          description="11math.com에서 약분과 통분을 단계별로 나눈 문제지를 받을 수 있다."
+          heading="우리 아이 통분 오답 메커니즘 정밀 진단"
+          description="매쓰클리닉 AI 정밀 진단으로 이분모 덧셈·뺄셈 취약 유형을 5분 만에 스캔해보세요."
+          label="통분 무료 AI 정밀 진단"
+          href="/#trial"
         />
 
-        <h2>3. 약분을 빠뜨리는 실수</h2>
-        <p>
-          계산 후 답을 기약분수로 정리하지 않고 그대로 두는 경우다. 답이
-          맞아도 기약분수로 정리하지 않으면 감점되는 경우가 많다. 계산이
-          끝나면 &quot;더 나눌 수 있는지&quot; 한 번 더 확인하는 걸 마무리
-          습관으로 붙인다.
-        </p>
+        <h2>초5가 가장 많이 범하는 통분 3대 오답 패턴</h2>
+        <ol>
+          <li>
+            <strong>1. 분모끼리 분자끼리 더하는 오류:</strong> 피자 반 판과 3분의 1판을 합쳤는데 어떻게 5분의 2판(반 판보다 작음)이
+            될 수 있는지 그림 모델을 통해 오류를 스스로 깨닫게 해야 합니다.
+          </li>
+          <li>
+            <strong>2. 두 분모의 단순 곱으로 계산 폭발:</strong> 분모가 12와 18일 때 최소공배수 36을 찾지 않고
+            12×18=216으로 무작정 곱해버려, 분자가 수백 단위로 커지면서 계산 도중 실수를 남발하는 패턴입니다.
+          </li>
+          <li>
+            <strong>3. 분모에만 곱하고 분자에는 안 곱하기:</strong> 분모를 12로 통분하면서 분모에는 3을 곱해놓고
+            분자에는 곱하는 것을 잊어버려 식의 값을 왜곡시키는 대표적 실수입니다.
+          </li>
+        </ol>
 
-        <AdSlot id="grade5-mistakes-infeed-1" />
-
-        <p>
-          통분 문제를 틀렸을 땐 어느 단계에서 실수했는지 구분해서 본다.
-          세 유형 중 어디에 해당하는지 표시해두면 다시 연습할 부분이
-          명확해진다.
-        </p>
+        <CurriculumBridge
+          title="관련 연계 학습"
+          items={[
+            {
+              grade: "초5 약분 연계",
+              href: "/grade-5/reduce-and-common-denominator",
+              topic: "약분과 소인수분해 원리",
+              description: "통분의 역과정인 약분을 통해 숫자를 단순화하는 다음 단계 솔루션입니다.",
+              type: "next",
+            },
+            {
+              grade: "초3 결손 점검",
+              href: "/grade-3/fraction-intro",
+              topic: "초3 분수의 기초 직관",
+              description: "분모의 의미가 헷갈린다면 초3 단위분수와 전체의 양 개념을 재정비해야 합니다.",
+              type: "prev",
+            },
+          ]}
+        />
       </article>
 
       <SiblingLink
         href="/grade-5/reduce-and-common-denominator"
-        label="약분과 통분, 따로 연습해야 하는 이유"
+        label="약분과 통분, 소인수분해 원리로 쉽게 풀기"
+        direction="next"
       />
-
       <GradeNav current={5} />
     </Container>
   );

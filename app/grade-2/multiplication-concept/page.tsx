@@ -1,82 +1,87 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ExternalCta from "@/components/ExternalCta";
-import AdSlot from "@/components/AdSlot";
 import GradeNav from "@/components/GradeNav";
 import { SubtopicBreadcrumb, SiblingLink } from "@/components/SubtopicNav";
+import CurriculumBridge from "@/components/CurriculumBridge";
 
 export const metadata: Metadata = {
-  title: "초2 곱셈 개념, 구구단 암기 전에 먼저 잡아야 하는 이유",
+  title: "곱셈의 개념, 동수누가와 묶어 세기로 시작해야 하는 이유",
   description:
-    "곱셈이 무엇인지 모르고 구구단만 외우면 문장제에서 막힌다. 개념을 잡는 순서를 정리했다.",
+    "곱셈을 단순 암기가 아닌 '같은 수를 여러 번 더하는 규칙(동수누가)'으로 이해해야 초3 나눗셈과 초5 분수 곱셈까지 술술 풀립니다.",
   alternates: { canonical: "/grade-2/multiplication-concept" },
-  openGraph: {
-    title: "초2 곱셈 개념, 구구단 암기 전에 먼저 잡아야 하는 이유",
-    description:
-      "곱셈이 무엇인지 모르고 구구단만 외우면 문장제에서 막힌다. 개념을 잡는 순서를 정리했다.",
-    url: "/grade-2/multiplication-concept",
-  },
 };
 
 export default function MultiplicationConcept() {
   return (
     <Container>
       <div className="pt-6">
-        <SubtopicBreadcrumb gradeHref="/grade-2" gradeLabel="초2" />
+        <SubtopicBreadcrumb gradeHref="/grade-2" gradeLabel="초2 가이드" />
       </div>
       <PageHero
-        eyebrow="초2 구구단 외우기"
-        title="초2 곱셈 개념, 구구단 암기 전에 먼저 잡아야 하는 이유"
-        description="암기표보다 3+3+3+3이 먼저다."
+        eyebrow="초2 연산 개념"
+        title="곱셈의 본질: 동수누가와 묶어 세기"
+        description="3×4는 구구단 노래가 아니라, &lsquo;3이 4번 반복되는 상황&rsquo;의 압축 기호입니다."
       />
 
       <article className="article">
         <p>
-          곱셈은 같은 수를 여러 번 더하는 것이다. 이 감각 없이 구구단표부터
-          외우면 곱셈을 그냥 숫자 나열로 받아들인다.
+          아이에게 &ldquo;3×4가 뭐야?&rdquo;라고 물었을 때 &ldquo;12!&rdquo;라고 즉답해도 안심할 수 없습니다.
+          &ldquo;왜 12가 될까?&rdquo;라고 물었을 때 &ldquo;3을 4번 더하니까 12예요(3+3+3+3)&rdquo; 혹은
+          &ldquo;3개씩 4묶음이니까요&rdquo;라고 설명할 수 있어야 진짜 곱셈의 개념을 아는 것입니다.
         </p>
 
-        <h2>3+3+3+3에서 3×4로</h2>
         <p>
-          사탕 3개씩 담긴 봉지 4개를 3+3+3+3으로 먼저 세어보고, 그게
-          3×4와 같다는 걸 눈으로 확인한다. 덧셈식과 곱셈식을 나란히
-          써보면서 같은 값이라는 걸 반복해서 보여준다.
-        </p>
-
-        <h2>문장제에서 곱셈을 알아보는 연습</h2>
-        <p>
-          &quot;한 상자에 6개씩 5상자면?&quot; 같은 문제에서 어떤 연산을
-          써야 할지 판단하는 연습이 필요하다. &quot;~씩 ~개&quot;라는
-          표현이 곱셈 신호라는 걸 여러 문제로 반복해서 확인한다. 이 판단력이
-          없으면 구구단을 다 외워도 언제 써야 할지 모른다.
+          이 개념이 비어있으면{" "}
+          <Link href="/grade-3/division-meaning" className="inline-link font-semibold">
+            초3 나눗셈
+          </Link>
+          에서 12÷3을 보고 &lsquo;12에서 3씩 몇 번 덜어낼 수 있는가&rsquo;라는 묶음 역연산을 전혀 이해하지 못하게 됩니다.
         </p>
 
         <ExternalCta
-          heading="구구단 익힘 문제지가 필요하다면"
-          description="11math.com에서 곱셈 개념부터 구구단 암기용까지 단계별로 받을 수 있다."
+          heading="우리 아이 곱셈 개념 이해도 진단"
+          description="매쓰클리닉 AI 정밀 진단으로 기계적 암기와 개념적 이해의 차이를 5분 만에 진단해보세요."
+          label="곱셈 개념 무료 AI 진단"
+          href="/#trial"
         />
 
-        <h2>그림으로 확인하기</h2>
+        <h2>동수누가(同數累加)에서 곱셈 기호로의 도약</h2>
         <p>
-          배열판(가로세로로 점을 찍은 표)에 3×4를 표시해보면 가로 3개,
-          세로 4줄이 곱이 된다는 걸 시각적으로 이해할 수 있다. 이 그림은
-          나중에 나눗셈, 넓이 개념으로도 이어진다.
+          바구니 4개에 사과가 3개씩 들어있는 그림을 보여주고,
+          &ldquo;사과가 모두 몇 개인지 더하기 식으로 써볼까?&rdquo; ➔ 3 + 3 + 3 + 3 = 12.
+          &ldquo;더하기를 계속 쓰려니까 너무 길고 팔이 아프지? 그래서 수학자들이 3이 4개 있다는 뜻으로 3×4라고 줄여 쓰기로 약속했단다&rdquo;
+          라고 지도하는 것이 아이에게 지적 쾌감을 선사하는 올바른 지도법입니다.
         </p>
 
-        <AdSlot id="grade2-multiplication-infeed-1" />
-
-        <p>
-          이 개념 없이 시작한 암기는 오래가지 못한다. 며칠 걸리더라도
-          곱셈이 무엇인지부터 확인하고 암기로 넘어간다.
-        </p>
+        <CurriculumBridge
+          title="관련 연계 학습"
+          items={[
+            {
+              grade: "초2 실전 암기",
+              href: "/grade-2/times-table-order",
+              topic: "구구단 암기 순서 로드맵",
+              description: "묶어 세기 개념을 체득한 후 뇌과학적 원리로 구구단을 완성하는 방법.",
+              type: "next",
+            },
+            {
+              grade: "초3 나눗셈 연계",
+              href: "/grade-3/division-meaning",
+              topic: "초3 나눗셈의 의미",
+              description: "곱셈의 묶어 세기가 나눗셈의 묶어 덜어내기(포함제)로 직결됩니다.",
+              type: "related",
+            },
+          ]}
+        />
       </article>
 
       <SiblingLink
         href="/grade-2/times-table-order"
-        label="구구단 암기 순서, 2단부터 9단까지"
+        label="구구단 외우는 순서, 2단부터 하면 안 되는 이유"
+        direction="next"
       />
-
       <GradeNav current={2} />
     </Container>
   );
