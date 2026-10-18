@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { renderOgImage, ogImageSize, ogImageContentType } from "@/lib/og-image";
 
 export const size = ogImageSize;
@@ -10,3 +12,4 @@ export default async function Image() {
     title: "초1 손가락 셈, 언제 떼야 할까",
   });
 }
+

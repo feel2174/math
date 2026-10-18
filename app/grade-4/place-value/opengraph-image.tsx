@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { renderOgImage, ogImageSize, ogImageContentType } from "@/lib/og-image";
 
 export const size = ogImageSize;
@@ -10,3 +12,4 @@ export default async function Image() {
     title: "초4 큰 수 계산, 자릿수 정렬로 실수 줄이기",
   });
 }
+

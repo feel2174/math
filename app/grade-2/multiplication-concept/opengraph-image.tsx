@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { renderOgImage, ogImageSize, ogImageContentType } from "@/lib/og-image";
 
 export const size = ogImageSize;
@@ -10,3 +12,4 @@ export default async function Image() {
     title: "초2 곱셈 개념, 구구단 암기 전에 먼저 잡아야 하는 이유",
   });
 }
+
